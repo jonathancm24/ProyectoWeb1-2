@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activadades>
+    <activadade>
+        <fechaini>08-06-2023</fechaini>
+        <fechafin>10-06-2023</fechafin>
+        <TutorCargo>Juan Pedro</TutorCargo>
+        <TemaProyecto>Biblioteca Uleam</TemaProyecto>
+        <SintesisProyecto>Desarrollador de software</SintesisProyecto>
+        <DescripcionActividades> Python</DescripcionActividades>
+        <ValoracionEstudiante>Futuras empresas laborales</ValoracionEstudiante>
+    </activadade>
+    <activadade>
+        <fechaini>08-06-2023</fechaini>
+        <fechafin>10-06-2023</fechafin>
+        <TutorCargo>Juan Pedro</TutorCargo>
+        <TemaProyecto>Sistema de parqueo</TemaProyecto>
+        <SintesisProyecto>Desarrollador de Aplicaciones</SintesisProyecto>
+        <DescripcionActividades> Visual Studio code </DescripcionActividades>
+        <ValoracionEstudiante>Experiencia</ValoracionEstudiante>
+    </activadade>
+    <activadade>
+        <fechaini>08-06-2023</fechaini>
+        <fechafin>10-06-2023</fechafin>
+        <TutorCargo>Juan Pedro</TutorCargo>
+        <TemaProyecto>Pagina web de escuelas</TemaProyecto>
+        <SintesisProyecto>Desarrollador de software</SintesisProyecto>
+        <DescripcionActividades>Java Script</DescripcionActividades>
+        <ValoracionEstudiante>Se ha destacado que estas prácticas son las adecuadas para la toma de contacto con la vida laboral.</ValoracionEstudiante>
+    </activadade>
+    <activadade>
+        <fechaini>08-06-2023</fechaini>
+        <fechafin>10-06-2023</fechafin>
+        <TutorCargo>Juan Pedro</TutorCargo>
+        <TemaProyecto>Tecnologia</TemaProyecto>
+        <SintesisProyecto>Desarrollador de software</SintesisProyecto>
+        <DescripcionActividades>C++</DescripcionActividades>
+        <ValoracionEstudiante>Para la vida laboral en general</ValoracionEstudiante>
+    </activadade>
+    <activadade>
+        <fechaini>01-06-2022</fechaini>
+        <fechafin>08-03-2022</fechafin>
+        <TutorCargo>Juan Lucas</TutorCargo>
+        <TemaProyecto>Desarrollo de un bote de basura inalambrico</TemaProyecto>
+        <SintesisProyecto>Desarrollador de software</SintesisProyecto>
+        <DescripcionActividades> Visual Studio code </DescripcionActividades>
+        <ValoracionEstudiante>Se ha destacado que estas prácticas </ValoracionEstudiante>
+    </activadade>
+</activadades>

@@ -1,0 +1,86 @@
+
+<div class="bodyComponents">
+    <div class="text-center lg:text-left">
+      <h1 class="text-3xl text-center font-bold">Avances</h1>
+    </div>
+    <div class="flex flex-row justify-between items-center">
+      <div class="flex flex-row">
+        <button class="btn flex flex-row items-center m-2 " onclick="my_modal_3.showModal()">
+          <img src= "../../../assets/imagenes/boton-agregar.png" alt="+">
+          <p class="items-center mx-2">Agregar</p>
+        </button>
+        <div class="form-control d-flex flex-row items-center m-2">
+          <input type="text" placeholder="Buscar" 
+          class="input input-bordered w-24 md:w-auto"/>
+        </div>
+  
+      </div>
+    </div>
+    <hr>
+    <div class="flex flex-row overflow-x-auto justify-self-center">
+      <table class="table table-zebra text-lg">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Actividades</th>
+            <th>Horas</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let practica of practicas | async">
+            <td>{{practica.id}}</td>
+            <td>{{practica.actividad}}</td>
+            <td>{{practica.horas}}</td>
+            <td>{{practica.observaciones}}</td>
+  
+            <td>
+              <button class="btn m-2 btn-accent text-slate-200" onclick="my_modal_2.showModal()" (click)="ObtenerDatosE(practica)">Editar</button>
+              <button class="btn m-2 btn-error text-slate-200" (click)="practica.actividad !== undefined && eliminarDato(practica.actividad)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     
+  
+  
+    <dialog id="my_modal_3" class="modal" >
+      <form  [formGroup]="doctorForm" method="dialog" class="modal-box" (ngSubmit)="addactividad()">
+        <!-- Campos del formulario -->
+        <h3 class="font-bold text-lg"> - CREAR - </h3>
+        <input class="m-2 p-2" type="text" placeholder="ID" formControlName="id">
+        <input class="m-2 p-2" type="text" placeholder="Actividad" formControlName="actividad">
+        <input class="m-2 p-2" type="text" placeholder="Horas" formControlName="horas">
+        <input class="m-2 p-2" type="text" placeholder="Observaciones" formControlName="observaciones">
+        <button class="btn" type="submit">Enviar</button>
+        <p class="py-4">Presione la tecla ESC o haga clic fuera para cerrar</p>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    
+    
+    <dialog id="my_modal_2" class="modal">
+      <form [formGroup]="UpdatedoctorForm" method="dialog" class="modal-box" (ngSubmit)="UpdateDato()">
+        <!-- Campos del formulario -->
+        <h3 class="font-bold text-lg"> - CREAR - </h3>
+        <input class="m-2 p-2" type="text" placeholder="ID" formControlName="id" [value]="doctorSeleccionado?.id" readonly>
+        <input class="m-2 p-2" type="text" placeholder="Actividad" formControlName="actividad" [value]="doctorSeleccionado?.actividad">
+        <input class="m-2 p-2" type="text" placeholder="Horas" formControlName="horas" [value]="doctorSeleccionado?.horas">
+        <input class="m-2 p-2" type="text" placeholder="Observaciones" formControlName="observaciones" [value]="doctorSeleccionado?.observaciones">
+        
+        <button class="btn" type="submit">Enviar</button>
+        <p class="py-4">Presione la tecla ESC o haga clic fuera para cerrar</p>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    
+
+  </div>
+  

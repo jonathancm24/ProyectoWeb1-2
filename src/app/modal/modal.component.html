@@ -1,0 +1,8 @@
+<label for="my_modal_{{numberModal}}" class="btn  bg-secondary">{{ labelText }}</label>
+<input type="checkbox" id="my_modal_{{numberModal}}" class="modal-toggle" />
+<div class="modal">
+    <div class="modal-box">
+        <ng-content></ng-content>
+    </div>
+    <label class="modal-backdrop" for="my_modal_{{numberModal}}">Close</label>
+</div>

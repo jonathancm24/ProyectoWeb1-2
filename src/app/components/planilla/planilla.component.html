@@ -1,0 +1,106 @@
+
+<div class="bodyComponents">
+    <div class="text-center lg:text-left">
+      <h1 class="text-3xl text-center font-bold">Datos de Estudiantes de Practicas</h1>
+    </div>
+    <div class="flex flex-row justify-between items-center">
+      <div class="flex flex-row">
+        <button class="btn flex flex-row items-center m-2 " onclick="my_modal_3.showModal()">
+          <img src= "../../../assets/imagenes/boton-agregar.png" alt="+">
+          <p class="items-center mx-2">Agregar</p>
+        </button>
+        <div class="form-control d-flex flex-row items-center m-2">
+          <input type="text" placeholder="Buscar" 
+          class="input input-bordered w-24 md:w-auto"/>
+        </div>
+  
+      </div>
+    </div>
+    <hr>
+    <div class="flex flex-row overflow-x-auto justify-self-center">
+      <table class="table table-zebra text-lg">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Nivel</th>
+            <th>Campus</th>
+            <th>Carrera</th>
+            <th>Correo institucional</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let estudiante of estudiantes | async">
+                <td>{{estudiante.id}}</td>
+                <td>{{estudiante.nombre}}</td>
+                <td>{{estudiante.nivel}}</td>
+                <td>{{estudiante.edad}}</td>
+                <td>{{estudiante.campus}}</td>
+                <td>{{estudiante.carrera}}</td>
+                <td>{{estudiante.correo}}</td>
+            <td>
+              <button class="btn m-2 btn-accent text-slate-200" onclick="my_modal_2.showModal()" (click)="ObtenerDatosE(estudiante)">Editar</button>
+              <button class="btn m-2 btn-error text-slate-200" (click)="estudiante.id && eliminarDato(estudiante.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+     
+  
+  
+    <dialog id="my_modal_3" class="modal"  >
+      <form  [formGroup]="EstudianteForm" method="dialog" class="modal-box" (ngSubmit)=" agregarEstudiante()">
+        <!-- Campos del formulario -->
+        <h3 class="font-bold text-lg"> - Datos de Practica - </h3>
+        <input class="m-2 p-2" type="text" placeholder="ID" formControlName="id">
+        <input class="m-2 p-2" type="text" placeholder="Nombre" formControlName="nombre">
+        <input class="m-2 p-2" type="text" placeholder="Nivel" formControlName="nivel">
+        <input class="m-2 p-2" type="text" placeholder="Edad" formControlName="edad">
+        <input class="m-2 p-2" type="text" placeholder="Campus" formControlName="campus">
+        <input class="m-2 p-2" type="text" placeholder="Carrera" formControlName="carrera">
+        <input class="m-2 p-2" type="text" placeholder="Correo Institucional" formControlName="correo">
+
+
+        <button class="btn" type="submit">Enviar</button>
+        <p class="py-4">Presione la tecla ESC o haga clic fuera para cerrar</p>
+      </form>
+      <div class="alert alert-info" *ngIf="mostrarAlerta">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>New software update available.</span>
+      </div>
+      
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    
+    
+    <dialog id="my_modal_2" class="modal">
+      <form [formGroup]="UpdateForm" method="dialog" class="modal-box" (ngSubmit)=" UpdateDato()">
+        <!-- Campos del formulario -->
+        <h3 class="font-bold text-lg"> - CREAR - </h3>
+        <input class="m-2 p-2" type="text" placeholder="ID" formControlName="id" [value]="EstudianteSeleccionado?.id" readonly>
+        <input class="m-2 p-2" type="text" placeholder="Nombre" formControlName="nombre" [value]="EstudianteSeleccionado?.nombre">
+        <input class="m-2 p-2" type="text"  placeholder="Nivel" formControlName="nivel" [value]="EstudianteSeleccionado?.nivel">
+        <input class="m-2 p-2" type="text"  placeholder="Edad" formControlName="edad" [value]="EstudianteSeleccionado?.edad">
+        <input class="m-2 p-2" type="text" placeholder="Campus" formControlName="campus" [value]="EstudianteSeleccionado?.campus">
+        <input class="m-2 p-2" type="text" placeholder="Carrera" formControlName="carrera" [value]="EstudianteSeleccionado?.carrera">
+        <input class="m-2 p-2" type="text" placeholder="Correo Institucional" formControlName="correo" [value]="EstudianteSeleccionado?.correo">
+
+        <button class="btn" type="submit">Enviar</button>
+        <p class="py-4">Presione la tecla ESC o haga clic fuera para cerrar</p>
+      </form>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+    
+
+  </div>
+  

@@ -1,0 +1,30 @@
+<div class="navbar bg-secondary text-base-100">
+  <div class="flex-1">
+    <img class="imagenNavbar" src="../../../assets/imagenes/transparente.png" />
+    <a class="btn btn-ghost normal-case text-xl">Proyectos de Investigación</a>
+    <div class="navbar-center centerMenu hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 font-sans font-semibold">
+        <li>
+          <a (click)="navigateToPage('Inicio/Actividades')">Actividades</a>
+        </li>
+        <li><a (click)="navigateToPage('Inicio/Home')">Home</a></li>
+        <li><a (click)="navigateToPage('Inicio/Practicas')">Seguimiento</a></li>
+        <li><a (click)="navigateToPage('Inicio/Planilla')">Planilla Estudiante</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class=" ml-auto">
+    <ul class="menu menu-horizontal px-12 font-sans">
+      <li>
+        <details>
+          <summary>{{nombre}}</summary>
+          <ul class="p-2 bg-neutral text-primary">
+            <li *ngIf="isLogged"><a (click)="logout()" (click)="navigateToPage('Login')" >Cerrar Sesion</a></li>
+            <li  *ngIf="isLogin"><a (click)="navigateToPage('Login')">Iniciar sesion</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
+

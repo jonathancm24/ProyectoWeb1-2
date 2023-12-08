@@ -1,0 +1,40 @@
+<div class="bodyComponents">
+  <div class="text-center lg:text-left">
+    <h1 class="text-3xl text-center font-bold">Practicas</h1>
+  </div>
+  <div class="flex flex-row justify-between items-center">
+    <div class="flex flex-row">
+      <div class="form-control d-flex flex-row items-center m-2">
+            <input type="file" (change)="uploadPDF($event)" accept=".pdf" class="file-input" />
+
+        </div>
+  
+      </div>
+    </div>
+    <hr>
+    <div class="flex flex-row overflow-x-auto justify-self-center">
+      <table class="table table-zebra text-lg">
+        <thead>
+          <tr>
+            <th>Nombre del PDF</th>
+            <th>Tamaño</th>
+            <th>Tipo</th>
+            <th>Última Modificación</th>
+            <th>Fecha de Subida</th>
+            <th>Acciones</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pdf of pdfData; let index = index">
+            <td>{{ pdf.nombre }}</td>
+            <td>{{ pdf.tamano }}</td>
+            <td>{{ pdf.tipo }}</td>
+            <td>{{ pdf.ultimaModificacion }}</td>
+            <td>{{ pdf.fechaSubida }}</td>
+            <td>
+              <button (click)="eliminarPDF(index)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
